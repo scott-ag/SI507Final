@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+     html *
+    { font-family: 'Futura' !important;}
+    .dataframe tr:nth-child(even){
+    background-color: #f2f2f2
+    }
+    .dataframe tr:hover {background-color: #ddd;}
+    .dataframe th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #2B0046;
+    color: white;
+    }
+    .dataframe { margin: auto;}
+    h1 {text-align: center;}
+    div {text-align: center;}
+    h2 {text-align: center;}
+    h3 {text-align: center;}
+    caption {font-size: x-large;}
+    </style>
+</head>
+<body style = "background-color:rgb(173,169,225,0.4);">
+<h1><center>Simple State to State Comparison (Business Variables)</center></h1>
+<hr>
+    <div>
+        {{ figure }}
+    </div>
+    <p>If you would like to narrow these results down to a specific category:</p>
+
+<div>
+
+</div>
+
+    <hr>
+
+<div>
+    <table border="1" class="dataframe">
+        <caption>State Table</caption>
+        <tr>
+            <th>Variable</th>
+            <th>Explanation</th>
+        </tr>
+    <tr>
+        <td>WhitePct</td>
+        <td>The percent of the State's population that the Census has designated 'White.'</td>
+    </tr>
+        <tr>
+            <td>BlackPct</td>
+        <td>The percent of the State's population that the Census has designated as 'Black,'
+        or Black mixed with other races.</td>
+    </tr><tr>
+        <td>Diploma</td>
+        <td>The percent of state residents 25 years and older who have a high school diploma or better.</td>
+    </tr>
+        <tr>
+        <td>Income</td>
+            <td>The median income for all state residents.</td>
+    </tr>
+        </table>
+</div>
+<br>
+<div>
+    <table border="1" class="dataframe">
+        <caption>Business Table</caption>
+        <tr>
+            <th>Variable</th>
+            <th>Explanation</th>
+        </tr>
+    <tr>
+        <td>City</td>
+        <td>The name of the city the business is in.</td>
+    </tr>
+        <tr>
+            <td>Rating</td>
+        <td>The average Yelp rating.</td>
+    </tr><tr>
+        <td>Price</td>
+        <td>The business' price level: $, $$, or $$$.</td>
+    </tr>
+        <tr>
+        <td>Category</td>
+            <td>The business category.</td>
+    </tr>
+        <tr>
+        <td>Num_Reviews</td>
+            <td>The number of Yelp reviews.</td>
+    </tr>
+    </table>
+</div>
+<ul>
+    <li><a href="/comparisons/{{ s1 }}/{{ s2 }}/{{ x }}/">Back</a></li>
+</ul>
+</body>
+</html>

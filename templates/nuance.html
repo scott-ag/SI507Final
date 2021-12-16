@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uncover Brother</title>
+    <style>
+     html *
+    { font-family: 'Futura' !important;}
+    .dataframe tr:nth-child(even){
+    background-color: #f2f2f2
+    }
+    .dataframe tr:hover {background-color: #ddd;}
+    .dataframe th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #2B0046;
+    color: white;
+
+    }
+    .dataframe {display: inline-block;
+    margin-right: 90px;
+    margin-left: 90px;}
+    h1 {text-align: center;}
+    div {text-align: center;
+    margin-bottom: 50px;}
+    h2 {text-align: center;}
+    h3 {text-align: center;}
+    p {text-align: center;}
+    caption {font-size: x-large;}
+    </style>
+</head>
+<body style = "background-color:rgb(173,169,225,0.4);">
+<h1>Comparisons</h1>
+<hr>
+<div>
+    <form action="{{url_for("form")}}" method="post">
+    <label for="state1">First State:</label>
+    <input type="text" id="state1" name="state1">
+    <br>
+    <label for="state2">Second State:</label>
+    <input type="text" id="state2" name="state2">
+    <br>
+    <label for="variable">Variable to Compare:</label>
+    <input type="text" id="variable" name="variable">
+    <br>
+    <button type="submit">Submit</button>
+    </form>
+</div>
+<div>
+    {% if state1 and state2 and variable %}
+    <p>You chose to compare {{ variable }} in {{ state1 }} and {{ state2 }}</p>
+    <a href="/comparisons/{{ state1 }}/{{ state2 }}/{{ variable }}">Check it out!</a>
+    {% endif %}
+</div>
+<div>
+    <table border="1" class="dataframe">
+        <caption>State Variables</caption>
+        <tr>
+            <th>Variable</th>
+            <th>Explanation</th>
+        </tr>
+    <tr>
+        <td>WhitePct</td>
+        <td>The percent of the State's population that the Census has designated 'White.'</td>
+    </tr>
+        <tr>
+            <td>BlackPct</td>
+        <td>The percent of the State's population that the Census has designated as 'Black,'
+        or Black mixed with other races.</td>
+    </tr><tr>
+        <td>Diploma</td>
+        <td>The percent of state residents 25 years and older who have a high school diploma or better.</td>
+    </tr>
+        <tr>
+        <td>Income</td>
+            <td>The median household income for all state residents.</td>
+    </tr>
+        </table>
+</div>
+<div>
+    <table border="1" class="dataframe">
+        <caption>Business Variables</caption>
+        <tr>
+            <th>Variable</th>
+            <th>Explanation</th>
+        </tr>
+        <tr>
+            <td>Rating</td>
+        <td>The average Yelp rating.</td>
+    </tr><tr>
+        <td>Price</td>
+        <td>The business' price level: $, $$, or $$$.</td>
+    </tr>
+        <tr>
+        <td>Num_Reviews</td>
+            <td>The number of Yelp reviews.</td>
+    </tr>
+    </table>
+</div>
+<ul>
+<li><a href="/home/">Back</a></li>
+    </ul>
+</body>
+</html>

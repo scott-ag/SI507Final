@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+     html *
+    { font-family: 'Futura' !important;}
+    .dataframe tr:nth-child(even){
+    background-color: #f2f2f2
+    }
+    .dataframe tr:hover {background-color: #ddd;}
+    .dataframe th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #2B0046;
+    color: white;
+
+    }
+    .dataframe {display: inline-block;
+    margin-right: 90px;
+    margin-left: 90px;}
+    h1 {text-align: center;}
+    div {text-align: center;
+    margin-bottom: 70px;}
+    h2 {text-align: center;}
+    h3 {text-align: center;}
+    p {text-align: center;}
+    caption {font-size: x-large;}
+    </style>
+</head>
+<body style = "background-color:rgb(173,169,225,0.4);">
+<h1>Hello there, traveler.</h1>
+<p>You may find it convenient to highlight & drag or copy & paste an option into the appropriate field.</p>
+<hr>
+<ul></ul>
+<li><a href="/home/">Back</a></li>
+</ul>
+<div>
+    <form action="{{url_for("choose")}}" method="post">
+    <label for="recbystate">Get Recommendation by State:</label>
+    <input type="text" id="recbystate" name="statepath">
+    <button type="submit">Submit</button>
+    <br>
+    <br>
+    <label for="recbycat">Get Recommendation by Category:</label>
+    <input type="text" id="recbycat" name="catpath">
+    <button type="submit">Submit</button>
+    </form>
+</div>
+<div>
+    {% if state %}
+    <a href="/recommender/{{ state }}/">{{ state }}</a>
+    {% elif category %}
+    <a href="/catrecommender/{{ category }}/">{{ category }}</a>
+    {% else %}
+    <p>Your url should show up here once you submit one of the above.</p>
+    {% endif %}
+</div>
+<div>
+<table border="1" class="dataframe" style="float: left;">
+    <tr>
+    <th>
+        State Options (Case Sensitive)
+    </th>
+    </tr>
+    {% for row in stateoptions[1:] %}
+    <tr>
+        <td>{{ row[0] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+<div>
+    <table border="1" class="dataframe" style="float: right;">
+    <tr>
+    <th>
+        Category Options (Case Sensitive)
+    </th>
+    </tr>
+    {% for row in categoryoptions %}
+    <tr>
+        <td>{{ row[0] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+</body>
+</html>

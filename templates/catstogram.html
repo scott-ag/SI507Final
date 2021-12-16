@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+     html *
+    { font-family: 'Futura' !important;}
+    .dataframe tr:nth-child(even){
+    background-color: #f2f2f2
+    }
+    .dataframe tr:hover {background-color: #ddd;}
+    .dataframe th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #2B0046;
+    color: white;
+    }
+    .dataframe { margin: auto;}
+    h1 {text-align: center;}
+    div {text-align: center;}
+    h2 {text-align: center;}
+    h3 {text-align: center;}
+    caption {font-size: x-large;}
+    </style>
+</head>
+<body style = "background-color:rgb(173,169,225,0.4);">
+<div>
+    {{ figure }}
+</div>
+{{ note }}
+<hr>
+{% if state == 'a' %}
+<ul>
+    <li><a href="/catrecommender/{{ category }}/rec/">See Top Recommendations (Nationwide)</a></li>
+    <li><a href="/recommender/">Back</a></li>
+    </ul>
+{% else %}
+<form action="{{url_for("histo", state=state)}}" method="post">
+    <label for="recbycat">Enter a Category to receive a list of Recommendations:</label>
+    <input type="text" id="recbycat" name="catpath">
+    <button type="submit">Submit</button>
+</form>
+
+<p>The current target url is:</p>
+<p>{{ url }}</p>
+<p>Double-check that the item you entered is correct, then click to see your <a href="{{ url }}">recommendations</a>.</p>
+
+<ul>
+    <li><a href="/recommender/">Back</a></li>
+    <li>If you're just here to find an applicable category for comparison, you
+    can head back using <a href="/comparison/">this link.</a></li>
+</ul>
+
+{% endif %}
+</body>
+</html>

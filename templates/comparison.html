@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    html *
+    { font-family: 'Futura' !important;}
+
+    table, th, td {
+      border: 1px solid black;
+      font-size: medium;
+      font-family: 'Times New Roman';
+    }
+    h1 {text-align: center;}
+    div {text-align: center;}
+    h2 {text-align: center;}
+    h3 {text-align: center;}
+     .dataframe tr:nth-child(even){
+    background-color: #f2f2f2
+    }
+    .dataframe tr:hover {background-color: #ddd;}
+    .dataframe { margin: auto;}
+    .dataframe th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #2B0046;
+    color: white
+    }
+    div {text-align: center;
+    margin-bottom: 30px;}
+    </style>
+</head>
+<body style = "background-color:rgb(173,169,225,0.4);">
+<h1>Simple State to State Comparison (Single Variable)</h1>
+<hr>
+<form>
+    <div>
+        {{ figure }}
+    </div>
+</form>
+<p>If you would like to narrow these results down to a specific category:</p>
+{% if not category %}
+<div>
+    <form action="{{url_for("plot", s1=s1, s2=s2, x=x)}}" method="post">
+    <label for = "catnuance">Category:</label>
+    <input type="text" id="catnuance" name = "addpath">
+    <button type="submit">Submit</button>
+    </form>
+</div>
+{% endif %}
+
+<div>
+    {% if category %}
+    <p>You selected <mark class="red">{{ category }}</mark></p>
+    <a href="{{ url }}/">See Results</a>
+    {% endif %}
+    {% if not category %}
+    <a href="{{ url }}/">Waiting...</a>
+    {% endif %}
+</div>
+<p>Note: you can see the list of categories at <a href="/categories/">/categories/.</a>
+However, most of what you find will not be applicable to your comparison, so it's best
+    to know what you're looking for. For any state, you can find a histogram of categories
+    by entering it <a href="/recommender/">here</a>.</p>
+<br>
+<p>If you would like, you can also explore more state to state comparisons by replacing values
+in the URL, plugging your choices like such: 'comparestates/(State)/(State)/(Y Variable).
+The applicable variables can be found below.</p>
+<div>
+    <table border="1" class="dataframe">
+        <tr>
+            <th>Variable</th>
+            <th>Explanation</th>
+        </tr>
+    <tr>
+        <td>WhitePct</td>
+        <td>The percent of the State's population that the Census has designated 'White.'</td>
+    </tr>
+        <tr>
+            <td>BlackPct</td>
+        <td>The percent of the State's population that the Census has designated as 'Black,'
+        or Black mixed with other races.</td>
+    </tr><tr>
+        <td>Diploma</td>
+        <td>The percent of state residents 25 years and older who have a high school diploma or better.</td>
+    </tr>
+        <tr>
+        <td>Income</td>
+            <td>The median household income for all state residents.</td>
+    </tr>
+        </table>
+</div>
+<div>
+    <table border="1" class="dataframe">
+        <tr>
+            <th>Variable</th>
+            <th>Explanation</th>
+        </tr>
+        <tr>
+            <td>Rating</td>
+        <td>The average Yelp rating.</td>
+    </tr><tr>
+        <td>Price</td>
+        <td>The business' price level: $, $$, or $$$.</td>
+    </tr>
+        <tr>
+        <td>Num_Reviews</td>
+            <td>The number of Yelp reviews.</td>
+    </tr>
+    </table>
+<br>
+    <p>To start from the beginning, head <a href="/comparisons/">here</a></p>
+</body>
+</html>

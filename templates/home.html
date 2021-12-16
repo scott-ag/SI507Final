@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    html *
+    { font-family: 'Futura' !important;}
+
+    table, th, td {
+      border: 1px solid black;
+      font-size: medium;
+      font-family: 'Times New Roman';
+    }
+    h1 {text-align: center;}
+    div {text-align: center;}
+    h2 {text-align: center;}
+    h3 {text-align: center;}
+    </style>
+</head>
+<body style = "background-color:rgb(173,169,225,0.4);">
+<h1>Uncover Brother: Visualizing Black-Owned Business vis-à-vis data from Yelp and the U.S. Census</h1>
+<hr>
+<h2>Scroll down for some basic plots, each less useful than the last.</h2>
+<h3>If you would like to make a comparison between states, click <a href="/comparisons/">here.</a></h3>
+<h3>If you would like to get a recommendation, click <a href="/recommender/">here.</a></h3>
+<form>
+    <div>
+        <center>{{ figure1 }}</center>
+
+    </div>
+</form>
+<form>
+    <div>
+        <center>{{ figure2 }}</center>
+        <center><p>If I dropped a line of best fit here, it would be pretty flat at around
+        y = 4.3. This is not surprising, because the overall average business rating is
+            {{ avg_rating }}. Someone of a certain mind might be interested in the way
+            that it seems like there's a greater rating spread in whiter areas.</p></center>
+    </div>
+</form>
+<form>
+    <div>
+        <center>
+            {{ coolfig }}
+        </center>
+    </div>
+</form>
+<form>
+    <div>
+        <center>{{ figure3 }}</center>
+        <center><p>Looks like folks are generally pleased with their vital services, like
+        towing and skin care. However, Yelp users do have some reasons to be upset: their wigs
+            won't stay glued down, and they can't
+        get anybody competent to come fix their leaky faucet.</p></center>
+    </div>
+</form>
+</body>
+</html>

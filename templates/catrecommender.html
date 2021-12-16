@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+     html *
+    { font-family: 'Futura' !important;}
+    .dataframe tr:nth-child(even){
+    background-color: #f2f2f2
+    }
+    .dataframe tr:hover {background-color: #ddd;}
+    .dataframe th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #2B0046;
+    color: white;
+    }
+    .dataframe { margin: auto;}
+    h1 {text-align: center;}
+    div {text-align: center;}
+    h2 {text-align: center;}
+    h3 {text-align: center;}
+    caption {font-size: x-large;}
+    </style>
+</head>
+<body style = "background-color:rgb(173,169,225,0.4);">
+<h1>Sorted Recommendations</h1>
+<h3>Best in class {{ category }}.*</h3>
+<hr>
+<form>
+    <div>
+        <table border="1" class="dataframe">
+            <tr>
+                {% for header in headers %}
+                <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in results %}
+            <tr>
+                {%for cell in row%}
+                <td>{{ cell }}</td>
+                {% endfor %}
+            {% endfor %}
+            </tr>
+        </table>
+    </div>
+</form>
+<ul>
+    <a href="/recommender/">Back to Recommendations</a>
+</ul>
+<br>
+<p>*Note that a business will not appear if it has less than ten reviews.</p>
+</body>
+</html>

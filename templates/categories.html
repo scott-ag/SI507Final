@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uncover Brother</title>
+    <style>
+     html *
+    { font-family: 'Futura' !important;}
+    .dataframe tr:nth-child(even){
+    background-color: #f2f2f2
+    }
+    .dataframe tr:hover {background-color: #ddd;}
+    .dataframe th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #2B0046;
+    color: white;
+
+    }
+    .dataframe {display: inline-block;
+    margin-right: 90px;
+    margin-left: 90px;}
+    h1 {text-align: center;}
+    div {text-align: center;
+    margin-bottom: 70px;}
+    h2 {text-align: center;}
+    h3 {text-align: center;}
+    p {text-align: center;}
+    caption {font-size: x-large;}
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="/home/">Back</a></li>
+</ul>
+<div>
+    <table border="1" class="dataframe" style="float: left;">
+    <tr>
+    <th>
+        Category Options (Case Sensitive)
+    </th>
+    </tr>
+    {% for row in categoryoptions %}
+    <tr>
+        <td>{{ row[0] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

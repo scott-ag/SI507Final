@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    html *
+    { font-family: 'Futura' !important;}
+
+    table, th, td {
+      border: 1px solid black
+      font-size: medium;
+      font-family: 'Times New Roman';
+      text-align:center;
+    }
+    h1 {text-align: center;}
+    div {text-align: center;
+    }
+    h2 {text-align: center;}
+    h3 {text-align: center;}
+    .dataframe {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ddd;
+    }
+    .dataframe tr:nth-child(even){
+    background-color: #f2f2f2
+    }
+    .dataframe tr:hover {background-color: #ddd;}
+    .dataframe th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #2B0046;
+    color: white
+    }
+    caption {
+    font-size: xx-large;
+    }
+
+    </style>
+</head>
+<body style = "background-color:rgb(173,169,225,0.4);">
+<h2>Hey there! Some tables below. If you're looking for my final project, head <a href="/home/">home.</a></h2>
+<div>
+<table border="1" class="dataframe">
+  <caption><a href="https://api.census.gov/data/2019/acs/acs1/profile.html">States</a><caption>
+  <thead>
+    <tr style="text-align: right;">
+      <th>id</th>
+      <th>Name</th>
+      <th>Percent White</th>
+      <th>Percent Black</th>
+      <th>Diploma</th>
+      <th>Income</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NAME</td>
+      <td>DP05_0037PE</td>
+      <td>DP05_0065PE</td>
+      <td>DP02_0067PE</td>
+      <td>DP03_0062E</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Mississippi</td>
+      <td>58.0</td>
+      <td>38.9</td>
+      <td>85.3</td>
+      <td>45792</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Missouri</td>
+      <td>81.8</td>
+      <td>12.9</td>
+      <td>90.7</td>
+      <td>57409</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Montana</td>
+      <td>88.0</td>
+      <td>1.4</td>
+      <td>94.2</td>
+      <td>57153</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Nebraska</td>
+      <td>86.2</td>
+      <td>6.1</td>
+      <td>92.0</td>
+      <td>63229</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Nevada</td>
+      <td>64.6</td>
+      <td>11.3</td>
+      <td>86.9</td>
+      <td>63276</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>New Hampshire</td>
+      <td>92.6</td>
+      <td>2.2</td>
+      <td>93.3</td>
+      <td>77933</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>New Jersey</td>
+      <td>67.1</td>
+      <td>15.1</td>
+      <td>90.3</td>
+      <td>85751</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>New Mexico</td>
+      <td>73.9</td>
+      <td>3.4</td>
+      <td>85.9</td>
+      <td>51945</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>New York</td>
+      <td>63.2</td>
+      <td>17.6</td>
+      <td>87.6</td>
+      <td>72108</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>North Carolina</td>
+      <td>68.1</td>
+      <td>23.1</td>
+      <td>88.6</td>
+      <td>57341</td>
+    </tr>
+  <tr>
+      <th>cont.</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+<br>
+<br>
+<div>
+<table border="1" class="dataframe">
+  <caption><a href="https://www.yelp.com/developers/documentation/v3/business_search">Businesses</a></caption>
+  <thead>
+    <tr style="text-align: right;">
+      <th>id</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Rating</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Num_Reviews</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Black Wall Street Liquid Lounge</td>
+      <td>Tulsa</td>
+      <td>Oklahoma</td>
+      <td>4.5</td>
+      <td>NaN</td>
+      <td>Coffee &amp; Tea</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Mandy's Beauty Supply</td>
+      <td>Tulsa</td>
+      <td>Oklahoma</td>
+      <td>4.5</td>
+      <td>NaN</td>
+      <td>Cosmetics &amp; Beauty Supply</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Evelyn's Soul Food Cuisine</td>
+      <td>Tulsa</td>
+      <td>Oklahoma</td>
+      <td>4.5</td>
+      <td>2.0</td>
+      <td>Soul Food</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Mack’s Wings</td>
+      <td>Tulsa</td>
+      <td>Oklahoma</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>Chicken Wings</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Mamo’s Seafood &amp; More</td>
+      <td>Tulsa</td>
+      <td>Oklahoma</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>Food Trucks</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Fulton Street</td>
+      <td>Tulsa</td>
+      <td>Oklahoma</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>Coffee &amp; Tea</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Alpha Grill</td>
+      <td>Tulsa</td>
+      <td>Oklahoma</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>Food Trucks</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Frios Gourmet Pops-Tulsa</td>
+      <td>Tulsa</td>
+      <td>Oklahoma</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>Desserts</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Sisserou's</td>
+      <td>Tulsa</td>
+      <td>Oklahoma</td>
+      <td>4.5</td>
+      <td>2.0</td>
+      <td>Caribbean</td>
+      <td>464</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Simply Rooted Wellness</td>
+      <td>Tulsa</td>
+      <td>Oklahoma</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>Naturopathic/Holistic</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>JC's Pizza</td>
+      <td>Tulsa</td>
+      <td>Oklahoma</td>
+      <td>3.5</td>
+      <td>2.0</td>
+      <td>Pizza</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>cont.</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>
